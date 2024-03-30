@@ -14,7 +14,15 @@ const PORT = 4004;
 
 connectToDB();
 
-app.use(cors());
+// app.use(cors());
+
+// Middleware
+app.use(cors({
+    origin: process.env.BACKEND_URL, // Update with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add any additional methods your frontend uses
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add any additional headers your frontend sends
+}));
+
 app.use(express.json());
 app.use(router);
 app.use(bodyParser.json());
