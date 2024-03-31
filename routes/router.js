@@ -133,6 +133,9 @@ router.post("/register", upload.single("photo"), async (req, res) => {
 router.get("/getData", async(req,res) => {
     try{
         const users = await User.find();
+        if( users.length == 0) {
+            res.status(200).json({users:"no users"})
+        }
         // console.log("users in route:", users);
         res.status(200).json(users);
     }catch(err) {

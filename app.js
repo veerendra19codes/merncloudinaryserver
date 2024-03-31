@@ -10,7 +10,7 @@ import router from "./routes/router.js"
 // import {User} from "./models/users.models.js"
 
 const app = express();
-const PORT = 4004;
+const PORT = process.env.PORT || 4004 ;
 
 connectToDB();
 
