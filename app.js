@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 4004 ;
 connectToDB();
 
 // app.use(cors());
-const allowedOrigins = [process.env.BACKEND_URL1, process.env.BACKEND_URL2,process.env.BACKEND_URL3]
+const allowedOrigins = [
+    process.env.BACKEND_URL1, process.env.BACKEND_URL2,process.env.BACKEND_URL3,process.env.BACKEND_URL4,
+]
 
 // Middleware
 app.use(cors({
